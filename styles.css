@@ -12,6 +12,34 @@ body {
   align-items: flex-start;
   min-height: 100vh;
   padding: 2rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark #theme-toggle {
+  color: #e0e0e0;
 }
 
 .todo-app {
@@ -21,6 +49,12 @@ body {
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 10px 22px rgba(20, 33, 70, 0.12);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.dark .todo-app {
+  background: #16213e;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
@@ -40,6 +74,13 @@ h1 {
   border: 1px solid #ced4da;
   border-radius: 6px;
   font-size: 1rem;
+  background: inherit;
+  color: inherit;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+body.dark #todo-input {
+  border-color: #444;
 }
 
 #add-btn {
@@ -63,6 +104,11 @@ h1 {
   align-items: center;
   padding: 0.7rem 0.8rem;
   border-bottom: 1px solid #e4e8ed;
+  transition: border-color 0.3s;
+}
+
+body.dark .todo-item {
+  border-color: #2a2a4a;
 }
 
 .todo-item:last-child {
